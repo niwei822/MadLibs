@@ -64,8 +64,13 @@ def show_madlib():
     a_color = request.args.get("color")
     a_noun = request.args.get("noun")
     a_adj = request.args.get("adjective")
+    feeling = request.args.get("mood")
+    if feeling:
+        say_sth = "Yeah, lucky!"
+    else:
+        say_sth = ""
     
-    return render_template("madlib.html", person=player, color=a_color, noun=a_noun, adjective=a_adj)
+    return render_template("madlib.html", person=player, color=a_color, noun=a_noun, adjective=a_adj, mood=say_sth)
     
     
 
